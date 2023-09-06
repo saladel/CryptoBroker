@@ -18,9 +18,26 @@ class HomeViewModel: ObservableObject {
     
     init() {
         fetchCoinData()
+        
+        // A timer to fetch data every 30 seconds
+        let timer = Timer.scheduledTimer(withTimeInterval: 30, repeats: true) { _ in
+            self.fetchCoinData()
+        }
+        
+        // Ensure the timer is scheduled on the main run loop to work properly with SwiftUI
+        RunLoop.main.add(timer, forMode: .common)
+        
+        
     }
     
     func fetchCoinData(){
+        
+        // Prints a timestamp when the request is made
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let timestamp = dateFormatter.string(from: Date())
+        print("Automatic request made at \(timestamp)")
+        
         let urlString = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=ngn&order=market_cap_desc&per_page=100&page=1&sparkline=true&price_change_percentage=24h&locale=en&precision=5"
         
         // convert url to a url object

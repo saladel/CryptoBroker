@@ -141,10 +141,10 @@
 			isa = PBXGroup;
 			children = (
 				84DA71DB2AA7C7830082E27A /* HomeView.swift */,
+				84A3F2762AA7CB3D006DD38A /* TopMoversView.swift */,
+				84A3F2742AA7CB06006DD38A /* TopMoversItemView.swift */,
 				84A3F2702AA7CA30006DD38A /* AllCoinsView.swift */,
 				84A3F2722AA7CA81006DD38A /* CoinRowView.swift */,
-				84A3F2742AA7CB06006DD38A /* TopMoversItemView.swift */,
-				84A3F2762AA7CB3D006DD38A /* TopMoversView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -379,6 +379,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -408,6 +409,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -27,7 +27,7 @@ struct AllCoinsView: View {
             .font(.caption)
             .padding(.horizontal)
             
-            ScrollView {
+            ScrollView(showsIndicators: false) {
                 VStack {
                     ForEach(viewModel.coins) { coin in
                         CoinRowView(coin: coin)

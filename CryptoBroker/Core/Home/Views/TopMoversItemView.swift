@@ -13,9 +13,6 @@ struct TopMoversItemView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            // TODO: Add image from url using Async image
-            //AsyncImage(url: "\(coin.image)")
-            
             KFImage(URL(string: coin.image!))
                 .resizable()
                 .frame(width: 35, height: 35)
@@ -34,18 +31,21 @@ struct TopMoversItemView: View {
                         .frame(width: 10, height: 10)
                         .opacity(0.4)
                     
-                    Text("\(coin.currentPrice)")
+                    Text("\(coin.currentPrice.toCurrencyWithDecimals())")
                         .font(.caption)
                         .foregroundColor(.gray)
                 }
             }
             
             // coin percentage change
-            Text("\(coin.priceChangePercentage24H)")
+            
+            //Text("\(coin.priceChangePercentage24H.toPercentString())")
+            Text("\(coin.priceChangePercentage24H.toCurrencyWithDecimals())%")
                 .font(.title2)
-                .foregroundColor(.green)
+                .foregroundColor(coin.priceChangePercentage24H < 0 ? .red : .green)
         }
         .frame(width: 140, height: 140)
+        .background(Color("ItemBackgroundColor"))
         .overlay {
             RoundedRectangle(cornerRadius: 10)
                 .stroke(Color(.systemGray4), lineWidth: 1.5)
