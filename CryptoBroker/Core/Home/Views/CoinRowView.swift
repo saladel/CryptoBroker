@@ -14,7 +14,7 @@ struct CoinRowView: View {
     var body: some View {
         HStack {
             // market rank
-            Text(" \(round(coin.marketCapRank ?? 1))")
+            Text(" \(coin.marketCapRank)")
                 .font(.caption)
                 .foregroundColor(.gray)
             
@@ -44,31 +44,25 @@ struct CoinRowView: View {
             VStack(alignment: .trailing, spacing: 4) {
                 
                 HStack(spacing: 0) {
+                    // Naira sign
                     Image(systemName: "nairasign")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 11, height: 11)
                     //.opacity(0.4)
                     
+                    // current Price
                     Text("\(coin.currentPrice.toCurrencyWithDecimals())")
                         .font(.subheadline)
                         .fontWeight(.semibold)
-                        //.padding(.leading, 4)
+                    //.padding(.leading, 4)
                 }
                 
-                if coin.priceChangePercentage24H < 0 {
-                    Text("\(coin.priceChangePercentage24H)")
-                        .font(.caption)
-                        .padding(.leading, 6)
-                        .foregroundColor(.red)
-                } else {
-                    Text("\(coin.priceChangePercentage24H)")
-                        .font(.caption)
-                        .padding(.leading, 6)
-                        .foregroundColor(.green)
-                }
-                
-                
+                // Price percentage change
+                Text("\(coin.priceChangePercentage24H.toCurrencyWithDecimals())%")
+                    .font(.caption)
+                    .padding(.leading, 6)
+                    .foregroundColor(coin.priceChangePercentage24H < 0 ? .red : .green)
             }
             .padding(.leading, 2)
         }

@@ -11,8 +11,9 @@ extension Double {
     
     private var currencyFormatter: NumberFormatter {
         let formatter = NumberFormatter()
+        //        formatter.numberStyle = .none
         formatter.usesGroupingSeparator = true
-//        formatter.numberStyle = .none
+        formatter.locale = .current
         formatter.numberStyle = .decimal
         formatter.minimumFractionDigits = 2
         formatter.maximumFractionDigits = 2
@@ -23,4 +24,21 @@ extension Double {
     func toCurrencyWithDecimals() -> String {
         return currencyFormatter.string(for: self) ?? "0.00"
     }
+    
+    /*
+    private var numberFormatter: NumberFormatter {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.minimumFractionDigits = 2
+        formatter.maximumFractionDigits = 2
+        
+        return formatter
+    }
+    
+    func toPercentString() -> String {
+        guard let numberAsString = numberFormatter.string(for: self) else { return "" }
+        return numberAsString + "%"
+    }
+     */
 }
+

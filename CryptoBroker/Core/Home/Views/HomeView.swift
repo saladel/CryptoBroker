@@ -12,7 +12,8 @@ struct HomeView: View {
     
     var body: some View {
         NavigationView {
-            ScrollView (.vertical, showsIndicators: false) {
+            //ScrollView (.vertical, showsIndicators: false)
+            VStack {
                 // top movers view
                 TopMoversView(viewModel: viewModel)
                 
@@ -22,6 +23,7 @@ struct HomeView: View {
                 AllCoinsView (viewModel: viewModel)
             }
             . navigationTitle("Live Prices")
+            .background(Color("ItemBackgroundColor"))
         }
     }
 }
