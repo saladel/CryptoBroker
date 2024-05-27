@@ -20,6 +20,12 @@ A Crypto application that gets cryptocurrency prices using [CoinGecko](https://w
 
 ## Video
 
-
 https://github.com/saladel/CryptoBroker/assets/53665585/856fa300-187c-47c3-955f-281f55d50dad
+
+
+#
+
+Feel free to reach out to me on [Linkedin](https://bit.ly/AdewaleSanusi) or [Twitter](https://twitter.com/A_4_Ade) if you have any questions or feedback!
+
+[🔝](#Table-of-contents)
 
